@@ -1,7 +1,7 @@
 <?php
-$servername = "localhost";
-$username = "root";  // Default XAMPP
-$password = "";      // Default is blank
+$servername = "jihanserver.mysql.database.azure.com";
+$username = "jihan";  // Default XAMPP
+$password = "jihan@2000";      // Default is blank
 $dbname = "medicare";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

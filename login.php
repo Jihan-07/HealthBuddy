@@ -85,9 +85,9 @@
 </head>
 
 <body>
-  <form action="LoginProcess.php" method="POST" id="login">
+  <form action="/LoginProcess.php" method="POST" id="login">
     <div class="glass-form">
-      <a href="index.php">
+      <a href="/index.php">
         <span class="close-btn">
           <i class="glyphicon glyphicon-arrow-left"></i> Back
         </span>

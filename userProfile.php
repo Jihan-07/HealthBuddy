@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    header("Location: Login.php");
+    header("Location: /Login.php");
     exit();
 }
 
@@ -96,7 +96,7 @@ $profile_img = '/images/profile.jpeg';
 <body>
   <div class="container-style">
     <h2 class="heading-color">My Profile</h2>
-    <a href="patient_dashboard.php" class="close-btn">Back</a>
+    <a href="/patient_dashboard.php" class="close-btn">Back</a>
     <div class="rowcontainer">
       <div>
         <img src="<?php echo $profile_img; ?>" alt="Profile Picture" class="profileimg" />

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'caretaker') {
-    header("Location: Login.php");
+    header("Location: /Login.php");
     exit();
 }
 
@@ -243,16 +243,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <nav class="custom-navbar">
     <div class="logo"><img src="/images/logo1.png" alt="">HealthyBuddy</div>
     <ul class="nav-links">
-        <li><a href="patient_dashboard.php">Dashboard</a></li>
-        <li><a href="Logout.php">Logout</a></li>
-        <li><a href="userProfile.php"><?php echo $_SESSION['username']; ?></a></li>
+        <li><a href="/patient_dashboard.php">Dashboard</a></li>
+        <li><a href="/Logout.php">Logout</a></li>
+        <li><a href="/userProfile.php"><?php echo $_SESSION['username']; ?></a></li>
     </ul>
 </nav>
 
 <div class="main-layout">
     <div class="sidebar">
         <a href="#"><i class="fa fa-user"></i> Upload Medicine</a>
-        <a href="Logout.php"><i class="fa fa-sign-out"></i> Logout</a>
+        <a href="/Logout.php"><i class="fa fa-sign-out"></i> Logout</a>
     </div>
 
     <div class="main-content">

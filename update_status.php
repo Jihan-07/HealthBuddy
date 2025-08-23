@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION['user_id'])) {
     $stmt->bind_param("sii", $status, $medicine_id, $user_id);
 
     if ($stmt->execute()) {
-        header("Location: patient_dashboard.php");
+        header("Location: /patient_dashboard.php");
         exit();
     } else {
         echo "Failed to update status: " . $stmt->error;
@@ -38,6 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION['user_id'])) {
     $stmt->close();
     $conn->close();
 } else {
-    header("Location: Login.php");
+    header("Location: /Login.php");
     exit();
 }

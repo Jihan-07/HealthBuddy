@@ -145,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
   <div class="glass-form" id="register">
-    <a href="/index.php"><span class="close-btn">
+    <a href="Homepage.html"><span class="close-btn">
       <i class="glyphicon glyphicon-arrow-left"></i> Back</span>
     </a>
 
@@ -198,7 +198,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       <div class="account-control text-center" style="margin-top: 15px;">
         <p style="margin-bottom: 5px;">Already have an account?</p>
-        <a href="/login.php">
+        <a href="login.php">
           <span style="color: rgba(251, 113, 0, 0.9); font-size: 15px; cursor: pointer;">
             <i class="glyphicon glyphicon-log-in"></i> Login
           </span>

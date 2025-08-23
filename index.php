@@ -40,7 +40,7 @@ if (!isset($_SESSION['user_id'])) {
       <li><a href="#instruction"><span>Instructions</span></a></li>
       <li><a href="#health"><span>HealthTips</span></a></li>
       <li><a href="#contact"><span>Contact</span></a></li>
-      <li><a href="/HTML_PHP/login.php"><span>Login/SignUp</span></a></li>
+      <li><a href="login.php"><span>Login/SignUp</span></a></li>
     </ul>
   </nav>
   <br>
@@ -62,7 +62,7 @@ if (!isset($_SESSION['user_id'])) {
           <div class="hero-content text-white">
             <h1>Welcome to <span class="text-danger">HealthyBuddy</span></h1>
             <p>Your trusted partner for timely medicine reminders</p>
-            <a class="btn btn-danger btn-lg" href="/HTML_PHP/Login.html">Get Started</a>
+            <a class="btn btn-danger btn-lg" href="Login.html">Get Started</a>
           </div>
         </header>
       </div>
@@ -73,7 +73,7 @@ if (!isset($_SESSION['user_id'])) {
           <div class="hero-content text-white">
             <h1>Stay Healthy with <span class="text-danger">Reminders</span></h1>
             <p>Never miss a dose again</p>
-            <a class="btn btn-light btn-lg" href="/HTML_PHP/Login.html" style="color: #dc3545;">Explore</a>
+            <a class="btn btn-light btn-lg" href="Login.html" style="color: #dc3545;">Explore</a>
           </div>
         </header>
       </div>
@@ -84,7 +84,7 @@ if (!isset($_SESSION['user_id'])) {
           <div class="hero-content text-white">
             <h1><span class="text-white">Your Health,</span> <span class="text-danger">Our Priority</span></h1>
             <p>Simple. Smart. Effective.</p>
-            <a class="btn btn-outline-danger btn-lg" href="/HTML_PHP/Login.html">Join Now</a>
+            <a class="btn btn-outline-danger btn-lg" href="Login.html">Join Now</a>
           </div>
         </header>
       </div>

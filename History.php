@@ -4,7 +4,7 @@ include('db.php');
 
 // Redirect if not a logged-in patient
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'patient') {
-    header("Location: /HTML_PHP/Login.php");
+    header("Location: Login.php");
     exit();
 }
 

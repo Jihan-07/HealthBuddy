@@ -24,25 +24,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Redirect based on role
             if ($user['role'] === 'patient') {
-                header("Location: /HTML_PHP/patient_dashboard.php");
+                header("Location: patient_dashboard.php");
             } elseif ($user['role'] === 'caretaker') {
-                header("Location: /HTML_PHP/caretaker_dashboard.php");
+                header("Location: caretaker_dashboard.php");
             } else {
-                header("Location: /HTML_PHP/Dashboard.html"); // Default
+                header("Location: Dashboard.html"); // Default
             }
             exit();
         } else {
             // Wrong password
-            echo "<script>alert('Invalid password. Please try again.'); window.location.href='/HTML_PHP/login.php';</script>";
+            echo "<script>alert('Invalid password. Please try again.'); window.location.href='login.php';</script>";
         }
     } else {
         // No user found
-        echo "<script>alert('Username not found.'); window.location.href='/HTML_PHP/login.php';</script>";
+        echo "<script>alert('Username not found.'); window.location.href='login.php';</script>";
     }
 
     $stmt->close();
     $conn->close();
 } else {
-    header("Location: /HTML_PHP/login.php");
+    header("Location: login.php");
     exit();
 }

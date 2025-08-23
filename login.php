@@ -85,9 +85,9 @@
 </head>
 
 <body>
-  <form action="/HTML_PHP/LoginProcess.php" method="POST" id="login">
+  <form action="LoginProcess.php" method="POST" id="login">
     <div class="glass-form">
-      <a href="/HTML_PHP/index.php">
+      <a href="index.php">
         <span class="close-btn">
           <i class="glyphicon glyphicon-arrow-left"></i> Back
         </span>
@@ -111,7 +111,7 @@
 
       <div class="account-control text-center" style="margin-top: 15px;">
         <p style="margin-bottom: 5px;">Don't have an account?</p>
-        <a href="/HTML_PHP/register.php">
+        <a href="register.php">
           <span style="color: rgba(36, 206, 23, 0.9); font-size: 15px; cursor: pointer;">
             <i class="glyphicon glyphicon-pencil"></i> Register
           </span>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'patient') {
-    header("Location: /HTML_PHP/Login.php");
+    header("Location: Login.php");
     exit();
 }
 
@@ -47,9 +47,9 @@ while ($row = $result->fetch_assoc()) {
   <nav class="custom-navbar">
     <div class="logo"><img src="/images/logo1.png" alt="">HealthyBuddy</div>
     <ul class="nav-links">
-      <li><a href="/HTML_PHP/patient_dashboard.php">Dashboard</a></li>
-      <li><a href="/HTML_PHP/index.php">Logout</a></li>
-      <li><a href="/HTML_PHP/userProfile.php"><?php echo htmlspecialchars($_SESSION['username']); ?></a></li>
+      <li><a href="patient_dashboard.php">Dashboard</a></li>
+      <li><a href="index.php">Logout</a></li>
+      <li><a href="userProfile.php"><?php echo htmlspecialchars($_SESSION['username']); ?></a></li>
     </ul>
   </nav>
 
@@ -57,10 +57,10 @@ while ($row = $result->fetch_assoc()) {
     <!-- Sidebar -->
     <div class="sidebar">
       <a href="#"><i class="fa fa-book" style="color: #3c8dbc;"></i> Today Medicines</a>
-      <a href="/HTML_PHP/UploadMedi.html"><i class="fa fa-upload" style="color: #f39c12;"></i> Upload Medicines</a>
-      <a href="/HTML_PHP/voiceNotification.html"><i class="fa fa-bell" style="color: #00c0ef;"></i> Voice/Timer</a>
-      <a href="/HTML_PHP/History.html"><i class="fa fa-history" style="color: #d9534f;"></i> History</a>
-      <a href="/HTML_PHP/Logout.php"><i class="fa fa-sign-out"></i> Logout</a>
+      <a href="UploadMedi.html"><i class="fa fa-upload" style="color: #f39c12;"></i> Upload Medicines</a>
+      <a href="voiceNotification.html"><i class="fa fa-bell" style="color: #00c0ef;"></i> Voice/Timer</a>
+      <a href="History.html"><i class="fa fa-history" style="color: #d9534f;"></i> History</a>
+      <a href="Logout.php"><i class="fa fa-sign-out"></i> Logout</a>
     </div>
 
     <!-- Main Content -->
@@ -108,7 +108,7 @@ while ($row = $result->fetch_assoc()) {
                 <div>
                   <h4 style="color: #d9534f; margin-top: 20px;">Update Your Status:</h4>
                 </div>
-                <form action="/HTML_PHP/update_status.php" method="post" class="btnRem" style="display: flex; gap: 10px;">
+                <form action="update_status.php" method="post" class="btnRem" style="display: flex; gap: 10px;">
                   <input type="hidden" name="medicine_id" value="<?php echo $medicine['id']; ?>">
                   <button class="btn btnTaken" name="status" value="Taken" type="submit">Taken</button>
                   <button class="btn btnMissed" name="status" value="Missed" type="submit">Missed</button>

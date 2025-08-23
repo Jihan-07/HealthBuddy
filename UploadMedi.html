@@ -29,8 +29,8 @@
       width: 30%;
       background-color: #fff;
       box-shadow: 0px 16px 32px rgba(5, 88, 177, 0.9);
-      border-radius: 10px;
       overflow: hidden;
+      border-radius: 10px;
     }
     .close-btn {
       position: absolute;
@@ -56,27 +56,34 @@
   </style>
 </head>
 <body>
-  <!--Voice Notification Section-->
+  <!--Upload Medicine Section-->
   <div class="container-style">
-    <h4 class="heading-color" style="background-color: rgba(34, 118, 79, 0.9); color: #ffffff;">Voice Reminder Setting</h4>
-    <a href="/HTML_PHP/Dashboard.html" style="color: #fff;"><span class="close-btn">Back</span></a>
+    <h4 class="heading-color">Upload New Medicine Info</h4>
+    <a href="Dashboard.html" style="color: #fff;"><span class="close-btn">Back</span></a>
     <div class="Ucontainer">
-      <form class="form-group">
+      <form>
         <div class="form-group">
-          <label for="voiceSwitch">Voice:</label>
-          <select class="form-control" id="voiceSwitch">
-            <option>ON</option>
-            <option>OFF</option>
-          </select>
+          <label for="uploadImages">Upload Images</label>
+          <input type="file" class="form-control" id="uploadImages">
         </div>
         <div class="form-group">
-          <label for="reminderTime">Reminder time:</label>
-          <input type="time" class="form-control" id="reminderTime">
+          <label for="medicineName">Medicine Name</label>
+          <input type="text" class="form-control" id="medicineName">
         </div>
-        <button type="submit" class="btn btnRem">Set Reminder</button>
+        <div class="form-group">
+          <label for="doses">Doses</label>
+          <input type="number" class="form-control" id="doses">
+        </div>
+        <div class="form-group">
+          <label for="times">Times</label>
+          <input type="text" class="form-control" id="times">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block">Add Medicines</button>
+        </div>       
       </form>
     </div>
   </div>
-  <!--End of voice notification Section-->
+  <!--End of Upload Medicine Section-->
 </body>
 </html>

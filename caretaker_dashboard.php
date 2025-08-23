@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'caretaker') {
-    header("Location: /HTML_PHP/Login.php");
+    header("Location: Login.php");
     exit();
 }
 
@@ -243,16 +243,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <nav class="custom-navbar">
     <div class="logo"><img src="/images/logo1.png" alt="">HealthyBuddy</div>
     <ul class="nav-links">
-        <li><a href="/HTML_PHP/patient_dashboard.php">Dashboard</a></li>
-        <li><a href="/HTML_PHP/Logout.php">Logout</a></li>
-        <li><a href="/HTML_PHP/userProfile.php"><?php echo $_SESSION['username']; ?></a></li>
+        <li><a href="patient_dashboard.php">Dashboard</a></li>
+        <li><a href="Logout.php">Logout</a></li>
+        <li><a href="userProfile.php"><?php echo $_SESSION['username']; ?></a></li>
     </ul>
 </nav>
 
 <div class="main-layout">
     <div class="sidebar">
         <a href="#"><i class="fa fa-user"></i> Upload Medicine</a>
-        <a href="/HTML_PHP/Logout.php"><i class="fa fa-sign-out"></i> Logout</a>
+        <a href="Logout.php"><i class="fa fa-sign-out"></i> Logout</a>
     </div>
 
     <div class="main-content">
@@ -266,95 +266,95 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endif; ?>
 
             <form method="post" enctype="multipart/form-data">
-                <label>Choose Patient:</label>
-                <select name="patient_id" required>
-                    <option value="">-- Select Patient --</option>
-                    <?php foreach ($patients as $pat): ?>
-                        <option value="<?php echo $pat['id']; ?>"
-                            <?php if (!empty($_POST['patient_id']) && $_POST['patient_id'] == $pat['id']) echo 'selected'; ?>>
-                            <?php echo htmlspecialchars($pat['username']); ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select><br><br>
+              <label>Choose Patient:</label>
+              <select name="patient_id" required>
+                <option value="">-- Select Patient --</option>
+                <?php foreach ($patients as $pat): ?>
+                <option value="<?php echo $pat['id']; ?>"
+                  <?php if (!empty($_POST['patient_id']) && $_POST['patient_id'] == $pat['id']) echo 'selected'; ?>>
+                    <?php echo htmlspecialchars($pat['username']); ?>
+                </option>
+                <?php endforeach; ?>
+              </select><br><br>
 
-                <label>Medicine Name:</label><br>
-                <input type="text" name="name" required><br><br>
+              <label>Medicine Name:</label><br>
+              <input type="text" name="name" required><br><br>
 
-                <label>Dosage:</label><br>
-<select name="dosage" required>
-  <option value="">-- Select Dosage --</option>
-  <option value="1 tablet">1 tablet</option>
-  <option value="2 tablets">2 tablets</option>
-  <option value="5 ml">5 ml</option>
-  <option value="10 ml">10 ml</option>
-  <option value="Half tablet">Half tablet</option>
-</select><br><br>
-
-
-                <label>Frequency:</label><br>
-<select name="frequency" required>
-  <option value="">-- Select Frequency --</option>
-  <option value="Once a day">Once a day</option>
-  <option value="Twice a day">Twice a day</option>
-  <option value="Thrice a day">Thrice a day</option>
-  <option value="Every 6 hours">Every 6 hours</option>
-  <option value="As needed">As needed</option>
-</select><br><br>
+              <label>Dosage:</label><br>
+              <select name="dosage" required>
+                <option value="">-- Select Dosage --</option>
+                <option value="1 tablet">1 tablet</option>
+                <option value="2 tablets">2 tablets</option>
+                <option value="5 ml">5 ml</option>
+                <option value="10 ml">10 ml</option>
+                <option value="Half tablet">Half tablet</option>
+              </select><br><br>
 
 
-                <label>Meal Timing:</label><br>
-<select name="meal_timing" required>
-  <option value="">-- Select Timing --</option>
-  <option value="Before meal">Before meal</option>
-  <option value="After meal">After meal</option>
-  <option value="With meal">With meal</option>
-  <option value="Empty stomach">Empty stomach</option>
-</select><br><br>
+              <label>Frequency:</label><br>
+              <select name="frequency" required>
+                <option value="">-- Select Frequency --</option>
+                <option value="Once a day">Once a day</option>
+                <option value="Twice a day">Twice a day</option>
+                <option value="Thrice a day">Thrice a day</option>
+                <option value="Every 6 hours">Every 6 hours</option>
+                <option value="As needed">As needed</option>
+              </select><br><br>
 
 
-                <label>Intake Time:</label><br>
-                <input type="datetime-local" name="intake_time" required><br><br>
+              <label>Meal Timing:</label><br>
+              <select name="meal_timing" required>
+                <option value="">-- Select Timing --</option>
+                <option value="Before meal">Before meal</option>
+                <option value="After meal">After meal</option>
+                <option value="With meal">With meal</option>
+                <option value="Empty stomach">Empty stomach</option>
+              </select><br><br>
 
-                <label>Medicine Image:</label><br>
-                <input type="file" name="image"><br><br>
 
-                <button type="submit">Upload Medicine</button>
+              <label>Intake Time:</label><br>
+              <input type="datetime-local" name="intake_time" required><br><br>
+
+              <label>Medicine Image:</label><br>
+              <input type="file" name="image"><br><br>
+
+              <button type="submit">Upload Medicine</button>
             </form>
 
             <?php if (!empty($uploaded_medicines)): ?>
-                <h3 style="margin-top: 40px;">Uploaded Medicines for Selected Patient</h3>
-                <table border="1" cellpadding="10" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Dosage</th>
-                            <th>Frequency</th>
-                            <th>Meal Timing</th>
-                            <th>Intake Time</th>
-                            <th>Status</th>
-                            <th>Image</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($uploaded_medicines as $med): ?>
-                            <tr>
-                                <td><?php echo htmlspecialchars($med['name']); ?></td>
-                                <td><?php echo htmlspecialchars($med['dosage']); ?></td>
-                                <td><?php echo htmlspecialchars($med['frequency']); ?></td>
-                                <td><?php echo htmlspecialchars($med['meal_timing']); ?></td>
-                                <td><?php echo date("Y-m-d H:i", strtotime($med['intake_time'])); ?></td>
-                                <td><?php echo htmlspecialchars($med['status'] ?? 'Not Updated'); ?></td>
-                                <td>
-                                    <?php if (!empty($med['image_path'])): ?>
-                                        <img src="<?php echo htmlspecialchars($med['image_path']); ?>" width="50">
-                                    <?php else: ?>
-                                        N/A
-                                    <?php endif; ?>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+              <h3 style="margin-top: 40px;">Uploaded Medicines for Selected Patient</h3>
+              <table border="1" cellpadding="10" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Dosage</th>
+                    <th>Frequency</th>
+                    <th>Meal Timing</th>
+                    <th>Intake Time</th>
+                    <th>Status</th>
+                    <th>Image</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php foreach ($uploaded_medicines as $med): ?>
+                    <tr>
+                      <td><?php echo htmlspecialchars($med['name']); ?></td>
+                      <td><?php echo htmlspecialchars($med['dosage']); ?></td>
+                      <td><?php echo htmlspecialchars($med['frequency']); ?></td>
+                      <td><?php echo htmlspecialchars($med['meal_timing']); ?></td>
+                      <td><?php echo date("Y-m-d H:i", strtotime($med['intake_time'])); ?></td>
+                      <td><?php echo htmlspecialchars($med['status'] ?? 'Not Updated'); ?></td>
+                      <td>
+                        <?php if (!empty($med['image_path'])): ?>
+                          <img src="<?php echo htmlspecialchars($med['image_path']); ?>" width="50">
+                        <?php else: ?>
+                          N/A
+                        <?php endif; ?>
+                      </td>
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
             <?php endif; ?>
         </div>
     </div>

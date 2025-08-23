@@ -6,7 +6,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+
   <style>
     body {
       background: url('/images/sliderimg.jpg') center center/cover no-repeat;
@@ -14,8 +14,8 @@
       min-height: 100vh;
     }
     body::after {
-      position: fixed;
       content: "";
+      position: fixed;
       top: 0;
       left: 0;
       height: 100%;
@@ -28,7 +28,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 30%;
+      width: 25%;
       padding: 30px;
       background: rgba(255, 255, 255, 0.1);
       border-radius: 15px;
@@ -79,44 +79,56 @@
     label {
       font-weight: 300;
     }
-      
   </style>
 </head>
+
 <body>
-  <form action="/HTML_PHP/LoginProcess.php" id="login">
-    <div class="glass-form">
-      <a href="/HTML_PHP/index.php">
-        <span class="close-btn">
-          <i class="glyphicon glyphicon-arrow-left"></i> Back
-        </span>
-      </a>
-    
-      <h2><i class="glyphicon glyphicon-user"></i> Login</h2>
-    
+  <div class="glass-form" id="register">
+    <a href="register.php"><span class="close-btn">
+      <i class="glyphicon glyphicon-arrow-left"></i> Back</span>
+    </a>
+      
+    <h2><i class="glyphicon glyphicon-edit"></i> Register</h2>
+ 
+    <form action="#" method="POST">
       <div class="form-group">
-        <label for="username"><i class="glyphicon glyphicon-user"></i> Username</label>
-        <input type="text" class="form-control" placeholder="Enter your username">
+        <label for="username"><i class="glyphicon glyphicon-user"></i> UserName</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Enter your full name">
       </div>
-    
+      
+      <div class="form-group">
+        <label for="email"><i class="glyphicon glyphicon-envelope"></i> Email Address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+      </div>
+      
+      <div class="form-group">
+        <label for="phone"><i class="glyphicon glyphicon-earphone"></i> Phone Number</label>
+        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+      </div>
+      
       <div class="form-group">
         <label for="password"><i class="glyphicon glyphicon-lock"></i> Password</label>
-        <input type="password" class="form-control" placeholder="Enter your password">
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter a password">
       </div>
-    
-      <button type="submit" class="btn btn-block btn-custom" onclick="window.location.href='/HTML_PHP/Dashboard.html'">
-        <i class="glyphicon glyphicon-log-in"></i> Login
+      
+      <div class="form-group">
+        <label for="retype"><i class="glyphicon glyphicon-retweet"></i> Retype Password</label>
+        <input type="password" class="form-control" id="retype" name="retype" placeholder="Retype your password">
+      </div>
+      
+      <button type="submit" class="btn btn-block btn-custom">
+        <i class="glyphicon glyphicon-ok"></i> Create Account
       </button>
-    
+      
       <div class="account-control text-center" style="margin-top: 15px;">
-        <p style="margin-bottom: 5px;">Don't have an account?</p>
-        <a href="/HTML_PHP/Registration.html">
-          <span style="color: rgba(36, 206, 23, 0.9); font-size: 15px; cursor: pointer;">
-            <i class="glyphicon glyphicon-pencil"></i> Register
+        <p style="margin-bottom: 5px;">Already have an account?</p>
+        <a href="Login.html">
+          <span style="color: rgba(251, 113, 0, 0.9); font-size: 15px; cursor: pointer;">
+            <i class="glyphicon glyphicon-log-in"></i> Login
           </span>
         </a>
       </div>
-    </div>
-  </form>
-
+    </form>
+  </div>
 </body>
 </html>
